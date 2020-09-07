@@ -34,7 +34,7 @@ cd ..
 npm run build
 ```
 
-After this, open `index.html` in the browser.
+Then run `npx serve` and go to http://localhost:5000/
 
 
 

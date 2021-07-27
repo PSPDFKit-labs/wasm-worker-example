@@ -2,34 +2,20 @@
 
 ## Getting Started
 
-### Install Emscripten
+### Prerequisites 
 
-```shell script
-# Get the emsdk repo
-git clone https://github.com/emscripten-core/emsdk.git
+- [Docker](https://docs.docker.com/desktop/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
-# Enter that directory
-cd emsdk
-
-# Download and install the latest SDK tools.
-./emsdk install latest
-
-# Make the "latest" SDK "active" for the current user. (writes ~/.emscripten file)
-./emsdk activate latest
-
-# Activate PATH and other environment variables in the current terminal
-source ./emsdk_env.sh
-```
+### Building and running the example
 
 Go to the project root and then do the following:
 
 ```shell script
 npm install
 
-cd wasm
-
-emcc add.cpp -s ENVIRONMENT=worker -s MODULARIZE=1 -s EXPORTED_FUNCTIONS="['_add']" -o add.js
-cd ..
+docker-compose run emscripten emcc wasm/sub.cpp -s ENVIRONMENT=worker -s MODULARIZE=1 -s EXPORTED_FUNCTIONS="['_sub']" -o wasm/sub.js
+docker-compose run emscripten emcc wasm/add.cpp -s ENVIRONMENT=worker -s MODULARIZE=1 -s EXPORTED_FUNCTIONS="['_add']" -o wasm/add.js
 
 npm run build
 ```

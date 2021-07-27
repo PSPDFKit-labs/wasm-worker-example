@@ -1,0 +1,14 @@
+version: '3.6'
+
+x-bind-mount: &bind-mount
+  type: 'bind'
+  consistency: 'delegated'
+
+services:
+  emscripten:
+    image: 'emscripten/emsdk:latest'
+    working_dir: /source
+    volumes:
+      - source: '.'
+        target: '/source'
+        <<: *bind-mount

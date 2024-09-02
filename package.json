@@ -1,14 +1,13 @@
 {
   "name": "wasm-webpack",
   "dependencies": {
-    "comlink": "^4.1.0"
+    "comlink": "^4.4.1"
   },
   "devDependencies": {
-    "file-loader": "^4.3.0",
-    "prettier": "^1.19.1",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
-    "worker-loader": "^2.0.0"
+    "file-loader": "^6.2.0",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "worker-loader": "^3.0.8"
   },
   "scripts": {
     "build": "rm -rf dist && webpack"

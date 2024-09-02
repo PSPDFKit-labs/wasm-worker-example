@@ -34,7 +34,7 @@ cd ..
 npm run build
 ```
 
-Then run `npx serve` and go to http://localhost:5000/
+Then run `npx serve` and go to http://localhost:3000/
 
 
 
